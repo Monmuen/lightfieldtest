@@ -271,7 +271,7 @@ function updateCameraOrientation(alpha, beta, gamma) {
   const betaOffset = initialOrientation ? beta - initialOrientation.beta : 0;
   const gammaOffset = initialOrientation ? gamma - initialOrientation.gamma : 0;
 
-  const euler = new THREE.Euler(betaOffset, alphaOffset, -gammaOffset, 'YXZ');
+  const euler = new THREE.Euler( alphaOffset, betaOffset,-gammaOffset, 'YXZ');
   gyroCamera.quaternion.setFromEuler(euler);
   gyroCamera.updateMatrixWorld(true); // 确保相机更新，正确接收参数
 }
